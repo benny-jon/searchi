@@ -28,9 +28,9 @@ fun getFlickApiKey() : String {
 * Uses [Dagger](https://github.com/google/dagger) for dependency injection.
 * Uses [Retrofit](https://github.com/square/retrofit) for networking with [RxJava Adapter](https://github.com/square/retrofit/tree/master/retrofit-adapters/rxjava2) and [Gson Converter](https://github.com/square/retrofit/tree/master/retrofit-converters/gson).
 * Uses [Picasso](https://github.com/square/picasso) for image loading and caching.
-* Uses ViewModel.
-* Uses LiveData of a PagedList.
-* DataFactory and DataSource of type PageKeyedDataSource.
+* Uses `LiveData` of a `PagedList`.
+* Uses `DataFactory` and `DataSource` of type `PageKeyedDataSource`.
+* Handles screen rotations by persisting the data with a `ViewModel` and `onSaveInstanceState`.
 
 ## Architecture
 
