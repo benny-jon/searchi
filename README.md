@@ -6,12 +6,12 @@ The app consist of a simple List of infinite amount images displayed in 3 column
 ## Screenshot
 
 <p align="center">
-<img src="https://github.com/bennyjr33/searchi/blob/master/demo_app_home.png"/>
+<img src="https://github.com/benny-jon/searchi/blob/master/demo_app_home.png"/>
 </p>
 
 ## Running Instrutions
 
-Before running the app, please remember to add your Flick API KEY to the file `FlickrApi` inside the method `getFlickApiKey` ([Link to File](https://github.com/bennyjr33/searchi/blob/master/app/src/main/java/com/bennyjon/searchi/network/FlickrApi.kt)). To get a Flickr API Key follow the instructions of [this link](https://www.flickr.com/services/apps/create/).
+Before running the app, please remember to add your Flick API KEY to the file `FlickrApi` inside the method `getFlickApiKey` ([Link to File](https://github.com/benny-jon/searchi/blob/master/app/src/main/java/com/bennyjon/searchi/network/FlickrApi.kt)). To get a Flickr API Key follow the instructions of [this link](https://www.flickr.com/services/apps/create/).
 ```kotlin
 /**
  * Returns the API KEY used for authentication with the Flickr API.
@@ -35,7 +35,7 @@ fun getFlickApiKey() : String {
 ## Architecture
 
 <p align="center">
-<img src="https://github.com/bennyjr33/searchi/blob/master/Searchi_Architecture.png"/>
+<img src="https://github.com/benny-jon/searchi/blob/master/Searchi_Architecture.png"/>
 </p>
 
 ## References
