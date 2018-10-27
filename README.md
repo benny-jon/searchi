@@ -3,7 +3,15 @@
 A simple demo app to test out the new Paging Library released by Google as part of the Architectural Components. 
 The app consist of a simple List of infinite amount images displayed in 3 columns, which are loaded base on a search query to the Flickr API.
 
-**NOTE:** Before running the app, please remember to add your Flick API KEY to the file `FlickrApi` inside the method `getFlickApiKey` ([Link to File](https://github.com/bennyjr33/searchi/blob/master/app/src/main/java/com/bennyjon/searchi/network/FlickrApi.kt)). To get a Flickr API Key follow the instructions of [this link](https://www.flickr.com/services/apps/create/).
+## Screenshot
+
+<p align="center">
+<img src="https://github.com/bennyjr33/searchi/blob/master/demo_app_home.png"/>
+</p>
+
+## Running Instrutions
+
+Before running the app, please remember to add your Flick API KEY to the file `FlickrApi` inside the method `getFlickApiKey` ([Link to File](https://github.com/bennyjr33/searchi/blob/master/app/src/main/java/com/bennyjon/searchi/network/FlickrApi.kt)). To get a Flickr API Key follow the instructions of [this link](https://www.flickr.com/services/apps/create/).
 ```kotlin
 /**
  * Returns the API KEY used for authentication with the Flickr API.
