@@ -27,7 +27,7 @@ fun getFlickApiKey() : String {
 ## Architecture
 
 <p align="center">
-<img src="https://www.flickr.com/photos/135677950@N03/45576453301/in/dateposted-public"/>
+<img src="https://github.com/bennyjr33/searchi/blob/master/Searchi_Architecture.png"/>
 </p>
 
 ## References
