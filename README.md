@@ -1,4 +1,4 @@
-# Searchi: Android Paging Library Demo App
+# Paging Library Demo App in Kotlin
 
 A simple demo app to test out the new Paging Library released by Google as part of the Architectural Components. 
 The app consist of a simple List of infinite amount images displayed in 3 columns, which are loaded base on a search query to the Flickr API.
@@ -26,7 +26,9 @@ fun getFlickApiKey() : String {
 
 ## Architecture
 
-//DIAGRAM COMING SOON
+<p align="center">
+<img src="https://www.flickr.com/photos/135677950@N03/45576453301/in/dateposted-public"/>
+</p>
 
 ## References
 
