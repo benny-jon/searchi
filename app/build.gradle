@@ -28,7 +28,7 @@ dependencies {
     def lifecycle_version = "1.1.1"
     def support_version = "27.1.0"
     def paging_version = "1.0.1"
-    def dagger_version = "2.11"
+    def dagger_version = "2.15"
     def retrofit_version = "2.4.0"
     def room_version = "1.1.1"
 

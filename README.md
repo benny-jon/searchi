@@ -1,3 +1,5 @@
+# NOTE: I will be migrating the repo to use Pagination V3 soon.
+
 # Paging Library Demo App in Kotlin
 
 A simple demo app to test out the new Paging Library released by Google as part of the Architectural Components. 
@@ -28,6 +30,7 @@ fun getFlickApiKey() : String {
 * Uses [Dagger](https://github.com/google/dagger) for dependency injection.
 * Uses [Retrofit](https://github.com/square/retrofit) for networking with [RxJava Adapter](https://github.com/square/retrofit/tree/master/retrofit-adapters/rxjava2) and [Gson Converter](https://github.com/square/retrofit/tree/master/retrofit-converters/gson).
 * Uses [Picasso](https://github.com/square/picasso) for image loading and caching.
+* Uses Pagination V2 from the Google's Jetpack Components.
 * Uses `LiveData` of a `PagedList`.
 * Uses `DataFactory` and `DataSource` of type `PageKeyedDataSource`.
 * Handles screen rotations by persisting the data with a `ViewModel` and `onSaveInstanceState`.
