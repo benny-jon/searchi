@@ -1,6 +1,6 @@
 package com.bennyjon.searchi.data
 
-import android.arch.paging.PageKeyedDataSource
+import androidx.paging.PageKeyedDataSource
 import com.bennyjon.searchi.models.FlickrPhoto
 import com.bennyjon.searchi.network.FlickrApi
 

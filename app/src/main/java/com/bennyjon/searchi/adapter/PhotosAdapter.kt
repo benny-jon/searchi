@@ -1,7 +1,7 @@
 package com.bennyjon.searchi.adapter
 
-import android.arch.paging.PagedListAdapter
-import android.support.v7.widget.RecyclerView.ViewHolder
+import androidx.paging.PagedListAdapter
+import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,7 +11,7 @@ import com.bennyjon.searchi.models.FlickrPhoto
 import com.bennyjon.searchi.network.getPhotoUrl
 import com.bennyjon.searchi.adapter.PhotosAdapter.PhotoHolder
 import com.squareup.picasso.Picasso
-import android.support.v7.util.DiffUtil
+import androidx.recyclerview.widget.DiffUtil
 
 /**
  * Recycler View Adapter for the list of {@link FlickrPhoto}.

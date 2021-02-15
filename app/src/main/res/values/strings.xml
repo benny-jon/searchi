@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Searchi</string>
     <string name="search_label">Search</string>
+    <string name="empty_screen_message">Click the search icon to look up images</string>
 </resources>
