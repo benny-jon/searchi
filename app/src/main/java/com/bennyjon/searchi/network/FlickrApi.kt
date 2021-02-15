@@ -2,17 +2,17 @@ package com.bennyjon.searchi.network
 
 import android.net.Uri
 import com.bennyjon.searchi.models.FlickrSearchResponse
-import io.reactivex.Single
+import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface FlickrApi {
 
     @GET("services/rest/?method=flickr.photos.search&format=json&nojsoncallback=1")
-    fun search(
+    suspend fun search(
             @Query("text") input: String,
             @Query("page") page: Int = 0,
-            @Query("api_key") apiKey : String = getFlickApiKey()): Single<FlickrSearchResponse>
+            @Query("api_key") apiKey: String = getFlickApiKey()): Response<FlickrSearchResponse>
 }
 
 /**
