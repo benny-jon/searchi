@@ -42,9 +42,9 @@ fun getFlickApiKey() : String {
 
 ## References
 
-* https://guides.codepath.com/android/Paging-Library-Guide
-* https://developer.android.com/topic/libraries/architecture/paging/
-* https://developer.android.com/topic/libraries/architecture/adding-components#paging
+* CodeLab: https://developer.android.com/codelabs/android-paging#0
+* Paging V3: https://developer.android.com/topic/libraries/architecture/paging/v3-overview
+* Migration to Paging V3 Steps: https://developer.android.com/topic/libraries/architecture/paging/v3-migration
 
 ## License
 
