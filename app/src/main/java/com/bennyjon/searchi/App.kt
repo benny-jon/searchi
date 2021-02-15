@@ -5,6 +5,7 @@ import android.app.Application
 import com.bennyjon.searchi.injection.AppModule
 import com.bennyjon.searchi.injection.DaggerAppComponent
 import com.squareup.leakcanary.LeakCanary
+import com.squareup.picasso.Picasso
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasActivityInjector
 import javax.inject.Inject
@@ -27,6 +28,8 @@ class App : Application(), HasActivityInjector {
                 .appModule(AppModule())
                 .build()
                 .inject(this)
+
+        Picasso.get().isLoggingEnabled = true
     }
 
     override fun activityInjector(): DispatchingAndroidInjector<Activity> {

@@ -16,7 +16,7 @@ import android.support.v7.util.DiffUtil
 /**
  * Recycler View Adapter for the list of {@link FlickrPhoto}.
  */
-class PhotosAdapter : PagedListAdapter<FlickrPhoto, PhotoHolder>(getFlickrPhotoDiff()) {
+class PhotosAdapter : PagedListAdapter<FlickrPhoto, PhotoHolder>(DefaultDiff()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PhotoHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -41,15 +41,13 @@ class PhotosAdapter : PagedListAdapter<FlickrPhoto, PhotoHolder>(getFlickrPhotoD
         }
     }
 
-    companion object {
-        fun getFlickrPhotoDiff() = object : DiffUtil.ItemCallback<FlickrPhoto>() {
-            override fun areItemsTheSame(oldItem: FlickrPhoto?, newItem: FlickrPhoto?): Boolean {
-                return oldItem?.id.equals(newItem?.id)
-            }
+    class DefaultDiff : DiffUtil.ItemCallback<FlickrPhoto>() {
+        override fun areItemsTheSame(oldItem: FlickrPhoto, newItem: FlickrPhoto): Boolean {
+            return oldItem.id == newItem.id
+        }
 
-            override fun areContentsTheSame(oldItem: FlickrPhoto?, newItem: FlickrPhoto?): Boolean {
-                return oldItem == newItem
-            }
+        override fun areContentsTheSame(oldItem: FlickrPhoto, newItem: FlickrPhoto): Boolean {
+            return oldItem == newItem
         }
     }
 }
