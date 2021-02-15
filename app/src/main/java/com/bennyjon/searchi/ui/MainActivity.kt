@@ -1,7 +1,6 @@
 package com.bennyjon.searchi.ui
 
 import android.app.SearchManager
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import android.content.Context
 import android.content.Intent
@@ -12,6 +11,8 @@ import androidx.recyclerview.widget.GridLayoutManager
 import android.view.Menu
 import android.view.View
 import android.widget.SearchView
+import androidx.paging.ExperimentalPagingApi
+import androidx.paging.LoadState
 import com.bennyjon.searchi.R
 import com.bennyjon.searchi.adapter.PhotosAdapter
 import com.bennyjon.searchi.data.FlickrPhotoViewModel
@@ -20,6 +21,7 @@ import dagger.android.AndroidInjection
 import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
 
+@ExperimentalPagingApi
 class MainActivity : AppCompatActivity() {
 
     companion object {
@@ -44,6 +46,29 @@ class MainActivity : AppCompatActivity() {
         recyclerView.setHasFixedSize(true)
 
         viewModel = ViewModelProviders.of(this).get(FlickrPhotoViewModel::class.java)
+
+        // TODO Add Loading indicators and Retry buttons as Footers of the Recycler view
+        //      to use this nice built-in LoadState listener in PagingV3.
+        searchLoading.visibility = View.GONE
+        recyclerView.visibility = View.VISIBLE
+        photosAdapter.addLoadStateListener { combinedLoadStates ->
+            when {
+                combinedLoadStates.refresh is LoadState.Loading -> {
+                    emptyScreenText.visibility = View.GONE
+                    searchLoading.visibility = View.VISIBLE
+                    recyclerView.visibility = View.GONE
+                }
+                combinedLoadStates.append.endOfPaginationReached -> {
+                    searchLoading.visibility = View.GONE
+                    recyclerView.visibility = View.VISIBLE
+                }
+                else -> {
+                    searchLoading.visibility = View.GONE
+                    recyclerView.visibility = View.VISIBLE
+                }
+            }
+        }
+
     }
 
     override fun onSaveInstanceState(outState: Bundle, outPersistentState: PersistableBundle) {
@@ -93,17 +118,9 @@ class MainActivity : AppCompatActivity() {
         recyclerView.visibility = View.GONE
 
         viewModel.getPhotos(flickrApi, currentQuery!!, resetData)
-                .observe(this, Observer { photos ->
-                    photosAdapter.submitList(photos)
-
-                    if (photos != null && photos.isNotEmpty()) {
-                        searchLoading.visibility = View.GONE
-                        recyclerView.visibility = View.VISIBLE
-                    } else {
-                        emptyScreenText.visibility = View.VISIBLE
-                        searchLoading.visibility = View.GONE
-                        recyclerView.visibility = View.GONE
-                    }
+                .observe(this, { photos ->
+                    photosAdapter.submitData(lifecycle, photos)
                 })
+
     }
 }

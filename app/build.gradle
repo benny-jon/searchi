@@ -26,7 +26,7 @@ android {
 
 dependencies {
     def android_x_version = "1.0.0"
-    def paging_version = "2.1.2"
+    def paging_version = "3.0.0-beta01"
     def dagger_version = "2.23.1"
     def retrofit_version = "2.6.0"
     def room_version = "2.2.6"
@@ -39,7 +39,6 @@ dependencies {
     implementation "androidx.recyclerview:recyclerview:1.1.0"
     implementation "androidx.cardview:cardview:$android_x_version"
     implementation "androidx.paging:paging-runtime:$paging_version"
-    implementation "androidx.paging:paging-rxjava2:$paging_version"
 
     implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
 

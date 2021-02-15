@@ -1,8 +1,6 @@
-# NOTE: I will be migrating the repo to use Pagination V3 soon.
+# Paging V3 Library Demo App in Kotlin
 
-# Paging Library Demo App in Kotlin
-
-A simple demo app to test out the new Paging Library released by Google as part of the Architectural Components. 
+A simple demo app to test out the new Paging V3 Library released by Google as part of the Architectural Components. 
 The app consist of a simple List of infinite amount images displayed in 3 columns, which are loaded base on a search query to the Flickr API.
 
 ## Screenshot
@@ -28,12 +26,13 @@ fun getFlickApiKey() : String {
 
 * Written 100% in Kotlin.
 * Uses [Dagger](https://github.com/google/dagger) for dependency injection.
-* Uses [Retrofit](https://github.com/square/retrofit) for networking with [RxJava Adapter](https://github.com/square/retrofit/tree/master/retrofit-adapters/rxjava2) and [Gson Converter](https://github.com/square/retrofit/tree/master/retrofit-converters/gson).
+* Uses [Leak Canary](https://square.github.io/leakcanary/) to detect Memory Leaks.
 * Uses [Picasso](https://github.com/square/picasso) for image loading and caching.
-* Uses Pagination V2 from the Google's Jetpack Components.
-* Uses `LiveData` of a `PagedList`.
-* Uses `DataFactory` and `DataSource` of type `PageKeyedDataSource`.
-* Handles screen rotations by persisting the data with a `ViewModel` and `onSaveInstanceState`.
+* Uses [Retrofit](https://github.com/square/retrofit) for networking with [Gson Converter](https://github.com/square/retrofit/tree/master/retrofit-converters/gson).
+* Uses Pagination V3 from the Google's Jetpack Components in coordination with Retrofit's Coroutine support.
+* Uses `LiveData` of a `PagingData`.
+* Uses `PagingSource` and `PagingDataAdapter`.
+* Handles screen rotations by caching the PagingData in the `ViewModel` Coroutine Scope and `onSaveInstanceState`.
 
 ## Architecture
 

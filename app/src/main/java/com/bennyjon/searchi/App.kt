@@ -2,6 +2,7 @@ package com.bennyjon.searchi
 
 import android.app.Activity
 import android.app.Application
+import androidx.paging.ExperimentalPagingApi
 import com.bennyjon.searchi.injection.AppModule
 import com.bennyjon.searchi.injection.DaggerAppComponent
 import com.squareup.leakcanary.LeakCanary
@@ -10,6 +11,7 @@ import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasActivityInjector
 import javax.inject.Inject
 
+@ExperimentalPagingApi
 class App : Application(), HasActivityInjector {
 
     @Inject

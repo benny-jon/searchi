@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import androidx.paging.PagingDataAdapter
 import com.bennyjon.searchi.R
 import com.bennyjon.searchi.models.FlickrPhoto
 import com.bennyjon.searchi.network.getPhotoUrl
@@ -16,7 +17,7 @@ import androidx.recyclerview.widget.DiffUtil
 /**
  * Recycler View Adapter for the list of {@link FlickrPhoto}.
  */
-class PhotosAdapter : PagedListAdapter<FlickrPhoto, PhotoHolder>(DefaultDiff()) {
+class PhotosAdapter : PagingDataAdapter<FlickrPhoto, PhotoHolder>(DefaultDiff()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PhotoHolder {
         val inflater = LayoutInflater.from(parent.context)
