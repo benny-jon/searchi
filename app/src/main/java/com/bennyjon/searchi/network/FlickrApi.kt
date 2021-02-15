@@ -31,6 +31,7 @@ fun getBaseUrl() : String {
 
 /**
  * Returns the API KEY used for authentication with the Flickr API.
+ * To get your own Flick API Key, follow the steps mentioned int the README file.
  */
 fun getFlickApiKey() : String {
     throw NotImplementedError("Paste your Flick API key below and remove this exception.")
