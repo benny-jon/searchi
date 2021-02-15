@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModelProviders
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.os.PersistableBundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import android.view.Menu
@@ -45,9 +46,9 @@ class MainActivity : AppCompatActivity() {
         viewModel = ViewModelProviders.of(this).get(FlickrPhotoViewModel::class.java)
     }
 
-    override fun onSaveInstanceState(outState: Bundle?) {
-        super.onSaveInstanceState(outState)
-        outState?.putString(PARAM_QUERY, currentQuery)
+    override fun onSaveInstanceState(outState: Bundle, outPersistentState: PersistableBundle) {
+        super.onSaveInstanceState(outState, outPersistentState)
+        outState.putString(PARAM_QUERY, currentQuery)
     }
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
