@@ -25,6 +25,8 @@ fun getFlickApiKey() : String {
 ## Implementation Details
 
 * Written 100% in Kotlin.
+* Uses ViewBinding for the Android Views version
+* Uses Jetpack Compose for the Compose version
 * Uses [Dagger](https://github.com/google/dagger) for dependency injection.
 * Uses [Leak Canary](https://square.github.io/leakcanary/) to detect Memory Leaks.
 * Uses [Picasso](https://github.com/square/picasso) for image loading and caching.
@@ -32,7 +34,7 @@ fun getFlickApiKey() : String {
 * Uses Pagination V3 from the Google's Jetpack Components in coordination with Retrofit's Coroutine support.
 * Uses `LiveData` of a `PagingData`.
 * Uses `PagingSource` and `PagingDataAdapter`.
-* Handles screen rotations by caching the PagingData in the `ViewModel` Coroutine Scope and `onSaveInstanceState`.
+* Handles screen rotations by caching the PagingData in the `ViewModel` Coroutine Scope and `onSaveInstanceState`. (currently broken)
 
 ## Architecture
 
