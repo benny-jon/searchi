@@ -16,6 +16,10 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.composeButton.setOnClickListener {
+            startActivity(Intent(this, ComposeActivity::class.java))
+        }
+
         binding.androidViewsButton.setOnClickListener {
             startActivity(Intent(this, AndroidViewsActivity::class.java))
         }

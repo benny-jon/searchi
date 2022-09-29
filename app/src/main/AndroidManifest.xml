@@ -27,13 +27,15 @@
 
         <activity
             android:name=".ui.ComposeActivity"
-            android:exported="false">
-            <!--            <intent-filter>-->
-            <!--                <action android:name="android.intent.action.SEARCH" />-->
-            <!--            </intent-filter>-->
-            <!--            <meta-data-->
-            <!--                android:name="android.app.searchable"-->
-            <!--                android:resource="@xml/searchable" />-->
+            android:exported="false"
+            android:theme="@style/AppThemeNoActionBar"
+            android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
         </activity>
 
         <activity
