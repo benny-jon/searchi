@@ -1,6 +1,5 @@
 package com.bennyjon.searchi.adapter
 
-import androidx.paging.PagedListAdapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import android.view.LayoutInflater
 import android.view.View

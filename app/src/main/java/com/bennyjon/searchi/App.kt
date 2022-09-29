@@ -1,30 +1,23 @@
 package com.bennyjon.searchi
 
-import android.app.Activity
 import android.app.Application
 import androidx.paging.ExperimentalPagingApi
 import com.bennyjon.searchi.injection.AppModule
 import com.bennyjon.searchi.injection.DaggerAppComponent
-import com.squareup.leakcanary.LeakCanary
 import com.squareup.picasso.Picasso
+import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
-import dagger.android.HasActivityInjector
+import dagger.android.HasAndroidInjector
 import javax.inject.Inject
 
 @ExperimentalPagingApi
-class App : Application(), HasActivityInjector {
+class App : Application(), HasAndroidInjector {
 
     @Inject
-    internal lateinit var dispatchingAndroidInjector: DispatchingAndroidInjector<Activity>
+    internal lateinit var dispatchingAndroidInjector: DispatchingAndroidInjector<Any>
 
     override fun onCreate() {
         super.onCreate()
-
-        if (LeakCanary.isInAnalyzerProcess(this)) {
-            return
-        }
-
-        LeakCanary.install(this)
 
         DaggerAppComponent.builder()
                 .appModule(AppModule())
@@ -34,7 +27,7 @@ class App : Application(), HasActivityInjector {
         Picasso.get().isLoggingEnabled = true
     }
 
-    override fun activityInjector(): DispatchingAndroidInjector<Activity> {
+    override fun androidInjector(): AndroidInjector<Any> {
         return dispatchingAndroidInjector
     }
 }
