@@ -1,7 +1,7 @@
-# Paging V3 Library Demo App in Kotlin
+# Paging V3 Library Demo App in Kotlin (with Compose and AndroidViews)
 
 A simple demo app to test out the new Paging V3 Library released by Google as part of the Architectural Components. 
-The app consist of a simple List of infinite amount images displayed in 3 columns, which are loaded base on a search query to the Flickr API.
+The app consist of a simple List of infinite images displayed in 3 columns, which are loaded base on a search query, using the public Flickr API.
 
 ## Screenshot
 
@@ -25,21 +25,22 @@ fun getFlickApiKey() : String {
 ## Implementation Details
 
 * Written 100% in Kotlin.
-* Uses ViewBinding for the Android Views version
 * Uses Jetpack Compose for the Compose version
+* Uses ViewBinding for the Android Views version
 * Uses [Dagger](https://github.com/google/dagger) for dependency injection.
 * Uses [Leak Canary](https://square.github.io/leakcanary/) to detect Memory Leaks.
 * Uses [Picasso](https://github.com/square/picasso) for image loading and caching.
+* Uses [Coil-kt](https://github.com/coil-kt/coil) for image loading and caching in the Compose Activity.
 * Uses [Retrofit](https://github.com/square/retrofit) for networking with [Gson Converter](https://github.com/square/retrofit/tree/master/retrofit-converters/gson).
 * Uses Pagination V3 from the Google's Jetpack Components in coordination with Retrofit's Coroutine support.
 * Uses `LiveData` of a `PagingData`.
 * Uses `PagingSource` and `PagingDataAdapter`.
-* Handles screen rotations by caching the PagingData in the `ViewModel` Coroutine Scope and `onSaveInstanceState`. (currently broken)
+* Handles screen rotations by caching the PagingData in the `ViewModel` Coroutine Scope and the search query during `onSaveInstanceState`.
 
 ## Architecture
 
 <p align="center">
-<img src="https://github.com/benny-jon/searchi/blob/master/Searchi_Architecture.png"/>
+<img src="https://github.com/benny-jon/searchi/blob/master/Searchi_Architecture.jpeg"/>
 </p>
 
 ## References
