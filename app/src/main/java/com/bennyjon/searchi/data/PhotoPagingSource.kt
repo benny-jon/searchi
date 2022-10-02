@@ -4,7 +4,6 @@ import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.bennyjon.searchi.network.models.FlickrPhoto
 import com.bennyjon.searchi.network.FlickrApi
-import com.bennyjon.searchi.network.getFlickApiKey
 import retrofit2.HttpException
 import java.io.IOException
 
@@ -17,7 +16,7 @@ class PhotoPagingSource(private val flickrApi: FlickrApi, private val query: Str
 
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, FlickrPhoto> {
         try {
-            val response = flickrApi.search(query, params.key ?: 0, getFlickApiKey())
+            val response = flickrApi.search(query, params.key ?: 0)
             if (!response.isSuccessful) {
                 return LoadResult.Error(Exception())
             }

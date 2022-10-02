@@ -10,9 +10,14 @@ interface FlickrApi {
 
     @GET("services/rest/?method=flickr.photos.search&format=json&nojsoncallback=1")
     suspend fun search(
-            @Query("text") input: String,
-            @Query("page") page: Int = 0,
-            @Query("api_key") apiKey: String = getFlickApiKey()): Response<FlickrSearchResponse>
+            @Query(QueryParam.TEXT) input: String,
+            @Query(QueryParam.PAGE) page: Int = 0): Response<FlickrSearchResponse>
+}
+
+object QueryParam {
+    const val TEXT = "text"
+    const val PAGE = "page"
+    const val API_KEY = "api_key"
 }
 
 /**
