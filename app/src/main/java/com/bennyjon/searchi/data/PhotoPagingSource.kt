@@ -2,7 +2,7 @@ package com.bennyjon.searchi.data
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import com.bennyjon.searchi.models.FlickrPhoto
+import com.bennyjon.searchi.network.models.FlickrPhoto
 import com.bennyjon.searchi.network.FlickrApi
 import com.bennyjon.searchi.network.getFlickApiKey
 import retrofit2.HttpException
@@ -11,7 +11,7 @@ import java.io.IOException
 class PhotoPagingSource(private val flickrApi: FlickrApi, private val query: String) :
         PagingSource<Int, FlickrPhoto>() {
 
-    override fun getRefreshKey(state: PagingState<Int, FlickrPhoto>): Int? {
+    override fun getRefreshKey(state: PagingState<Int, FlickrPhoto>): Int {
         return 0
     }
 

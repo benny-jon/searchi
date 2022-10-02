@@ -1,7 +1,7 @@
 package com.bennyjon.searchi.network
 
 import android.net.Uri
-import com.bennyjon.searchi.models.FlickrSearchResponse
+import com.bennyjon.searchi.network.models.FlickrSearchResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query

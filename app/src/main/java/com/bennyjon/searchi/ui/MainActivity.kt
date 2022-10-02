@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.paging.ExperimentalPagingApi
 import com.bennyjon.searchi.databinding.ActivityMainBinding
+import com.bennyjon.searchi.ui.compose.ComposeActivity
 
 @ExperimentalPagingApi
 class MainActivity : AppCompatActivity() {

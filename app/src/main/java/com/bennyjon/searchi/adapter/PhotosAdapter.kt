@@ -7,16 +7,15 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.paging.PagingDataAdapter
 import com.bennyjon.searchi.R
-import com.bennyjon.searchi.models.FlickrPhoto
-import com.bennyjon.searchi.network.getPhotoUrl
 import com.bennyjon.searchi.adapter.PhotosAdapter.PhotoHolder
 import com.squareup.picasso.Picasso
 import androidx.recyclerview.widget.DiffUtil
+import com.bennyjon.searchi.data.FlickrPhotoData
 
 /**
  * Recycler View Adapter for the list of {@link FlickrPhoto}.
  */
-class PhotosAdapter : PagingDataAdapter<FlickrPhoto, PhotoHolder>(DefaultDiff()) {
+class PhotosAdapter : PagingDataAdapter<FlickrPhotoData, PhotoHolder>(DefaultDiff()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PhotoHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -24,10 +23,10 @@ class PhotosAdapter : PagingDataAdapter<FlickrPhoto, PhotoHolder>(DefaultDiff())
     }
 
     override fun onBindViewHolder(holder: PhotoHolder, position: Int) {
-        val photo: FlickrPhoto = getItem(position) ?: return
+        val photo: FlickrPhotoData = getItem(position) ?: return
         holder.image?.let {
             Picasso.get()
-                    .load(getPhotoUrl(photo.farm, photo.server, photo.id, photo.secret))
+                    .load(photo.imageUri)
                     .fit()
                     .centerCrop()
                     .into(it)
@@ -41,12 +40,12 @@ class PhotosAdapter : PagingDataAdapter<FlickrPhoto, PhotoHolder>(DefaultDiff())
         }
     }
 
-    class DefaultDiff : DiffUtil.ItemCallback<FlickrPhoto>() {
-        override fun areItemsTheSame(oldItem: FlickrPhoto, newItem: FlickrPhoto): Boolean {
+    class DefaultDiff : DiffUtil.ItemCallback<FlickrPhotoData>() {
+        override fun areItemsTheSame(oldItem: FlickrPhotoData, newItem: FlickrPhotoData): Boolean {
             return oldItem.id == newItem.id
         }
 
-        override fun areContentsTheSame(oldItem: FlickrPhoto, newItem: FlickrPhoto): Boolean {
+        override fun areContentsTheSame(oldItem: FlickrPhotoData, newItem: FlickrPhotoData): Boolean {
             return oldItem == newItem
         }
     }
